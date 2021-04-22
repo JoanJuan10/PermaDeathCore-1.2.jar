@@ -45,7 +45,7 @@ public class DiscordManager {
 
          try {
             JDABuilder builder = JDABuilder.createDefault(token);
-            builder.setActivity(Activity.watching("InfernalCore.net | " + this.configuration.getString("Status")));
+            builder.setActivity(Activity.watching("Gaming-Force.es | Permadeath " + this.configuration.getString("Status")));
             builder.addEventListeners(new Object[]{new JDAListeners(this)});
             this.bot = builder.build();
             this.bot.awaitReady();
@@ -68,7 +68,7 @@ public class DiscordManager {
                return;
             }
 
-            this.sendEmbed(channel, this.buildEmbed("PermadeathCore", Color.GREEN, (String)null, (String)null, (String)null, ":gear: Plugin encendido."));
+            this.sendEmbed(channel, this.buildEmbed("G-F Permadeath", Color.GREEN, (String)null, (String)null, (String)null, "Servidor encendido."));
          } catch (Exception var4) {
          }
       } else {
@@ -83,7 +83,7 @@ public class DiscordManager {
          if (s != null) {
             TextChannel channel = this.bot.getTextChannelById(s);
             if (channel != null) {
-               this.sendEmbed(channel, this.buildEmbed("PermadeathCore", Color.RED, (String)null, (String)null, (String)null, ":gear: Plugin desactivado."));
+               this.sendEmbed(channel, this.buildEmbed("G-F Permadeath", Color.RED, (String)null, (String)null, (String)null, "Servidor apagado."));
             }
          }
       }
@@ -95,7 +95,7 @@ public class DiscordManager {
          if (s != null) {
             TextChannel channel = this.bot.getTextChannelById(s);
             if (channel != null) {
-               this.sendEmbed(channel, this.buildEmbed("PermadeathCore", Color.RED, (String)null, (String)null, (String)null, ":fire: " + ChatColor.stripColor(msg)));
+               this.sendEmbed(channel, this.buildEmbed("G-F Permadeath", Color.RED, (String)null, (String)null, (String)null, ":fire: " + ChatColor.stripColor(msg)));
             }
          }
       }
@@ -107,7 +107,7 @@ public class DiscordManager {
          if (s != null) {
             TextChannel channel = this.bot.getTextChannelById(s);
             if (channel != null) {
-               this.sendEmbed(channel, this.buildEmbed("PermadeathCore", Color.GREEN, (String)null, (String)null, (String)null, ":alarm_clock: Han avanzado al día " + this.instance.getDays()));
+               this.sendEmbed(channel, this.buildEmbed("G-F Permadeath", Color.GREEN, (String)null, (String)null, (String)null, ":alarm_clock: Han avanzado al día " + this.instance.getDays()));
             }
          }
       }
@@ -123,7 +123,7 @@ public class DiscordManager {
          String date = String.format("%02d/%02d/%02d", n.getDayOfMonth(), n.getMonthValue(), n.getYear());
          String cause = isAFKBan ? "AFK" : data.getBanCause();
          EmbedBuilder b = this.buildEmbed(off.getName() + " ha sido PERMABANEADO en " + serverName + "\n", new Color(15993868), (String)null, (String)null, "https://minotar.net/armor/bust/" + off.getName() + "/100.png");
-         b.setAuthor("InfernalCore.net | PermaDeathCore", "http://permadeathcore.com/", "https://www.spigotmc.org/data/avatars/l/973/973464.jpg?1599783018");
+         b.setAuthor("Gaming-Force.es | Permadeath", "https://media.discordapp.net/attachments/493059088125788162/783994257274175518/g-f.png");
          b.addField("\ud83d\udcc5 Fecha", date, true);
          b.addField("\ud83d\udc80 Razón", cause, true);
          if (!isAFKBan) {
